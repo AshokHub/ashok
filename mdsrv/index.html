@@ -16,15 +16,15 @@
 	<script>
 	document.addEventListener("DOMContentLoaded", function() {
 		stage = new NGL.Stage("viewport", {
-			backgroundColor: "#eff3f8",
+			backgroundColor: "white",
 			tooltip: true
 		});
-		stage.loadFile("https://mmb.irbbarcelona.org/BCE/api/v1/files/BCE/BAC0010550/TRAJ/top", {
+		stage.loadFile("data/ligBZU.dry.noelem.pdb", {
 				ext: "pdb",
 				defaultRepresentation: false
 			})
 			.then(function(o) {
-				var framesPromise = NGL.autoLoad("https://mmb.irbbarcelona.org/BCE/api/v1/files/BCE/BAC0010550/TRAJ/coords", {
+				var framesPromise = NGL.autoLoad("data/ligBZU.traj.dcd", {
 						ext: "dcd"
 					})
 					.then(function(frames) {
